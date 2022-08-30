@@ -1,3 +1,4 @@
+@prod
 Feature: Login Feature
   In order to perform successful login
   As a user

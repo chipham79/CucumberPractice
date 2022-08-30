@@ -1,3 +1,4 @@
+
 Feature: Login Feature
   In order to perform successful login
   As a user
@@ -7,6 +8,7 @@ Feature: Login Feature
     Given user navigate to the website
     When user user validates the homepage title
 
+  @staging
   Scenario: Login to website as valid user
     And user enters "valid" username
     And user enters "valid" password
