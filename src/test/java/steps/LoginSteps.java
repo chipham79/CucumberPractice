@@ -1,9 +1,12 @@
 package steps;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+
+import java.util.List;
 
 public class LoginSteps
 {
@@ -32,4 +35,15 @@ public class LoginSteps
     }
 
 
+    @And("user enters firstname and lastname")
+    public void userEntersFirstnameAndLastname(DataTable dataTable)
+    {
+        List<List<String>> data = dataTable.asLists();
+
+        // First row and first col
+        System.out.println("First name is: " + data.get(0).get(0) + ", Last name is: " + data.get(0).get(1));
+
+        // Second row and Second col
+        System.out.println("First name is: " + data.get(1).get(0) + ", Last name is: " + data.get(1).get(1));
+    }
 }
