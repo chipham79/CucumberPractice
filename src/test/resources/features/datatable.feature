@@ -12,6 +12,7 @@ Feature: Login Feature
     And user enters "valid" username
     And user enters "valid" password
     And user enters firstname and lastname
-      | John  | Hommower  |
-      | Marry |  Hommower |
+      |Firstname  |Lastname|
+      |John  |Hommower  |
+      |Marry |Hommower |
     Then user click on the sign in button
