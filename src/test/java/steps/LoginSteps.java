@@ -7,6 +7,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
+import java.util.Map;
 
 public class LoginSteps
 {
@@ -38,12 +39,18 @@ public class LoginSteps
     @And("user enters firstname and lastname")
     public void userEntersFirstnameAndLastname(DataTable dataTable)
     {
-        List<List<String>> data = dataTable.asLists();
+//        List<List<String>> data = dataTable.asLists();
+//
+//        // First row and first col
+//        System.out.println("First name is: " + data.get(0).get(0) + ", Last name is: " + data.get(0).get(1));
+//
+//        // Second row and Second col
+//        System.out.println("First name is: " + data.get(1).get(0) + ", Last name is: " + data.get(1).get(1));
 
-        // First row and first col
-        System.out.println("First name is: " + data.get(0).get(0) + ", Last name is: " + data.get(0).get(1));
+        List<Map<String, String>> data = dataTable.asMaps();
 
-        // Second row and Second col
-        System.out.println("First name is: " + data.get(1).get(0) + ", Last name is: " + data.get(1).get(1));
+        System.out.println("My full name is " + data.get(0).get("Firstname") + " " + data.get(0).get("Lastname"));
+        System.out.println("My full name is " + data.get(1).get("Firstname") + " " + data.get(1).get("Lastname"));
+
     }
 }
